@@ -1,0 +1,4 @@
+[console_scripts]
+github_manage_collaborators = github2.bin.manage_collaborators:main
+github_search_repos = github2.bin.search_repos:main
+

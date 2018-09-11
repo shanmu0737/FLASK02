@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block main_content %}
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-default">
+                <div class="panel-hending">
+                    <h4>管理员登录</h4>
+                </div>
+                <div class="panel-body">
+                    <form action="#" class="form-horizontal" method="post">
+                        <div class="col-md-10 col-md-offset-1">
+                            {% with messages = get_flashed_messages() %}  <!-- 显示错误 提示集合-->
+                                {% if messages %}      <!-- if  mes 不是空-->
+                                    {% for msg in messages %}   <!-- 遍历出messg-->
+                                        <div class="alert alert-warning"> <!--警告框 加 一个按钮-->
+                                            <a href="#" class="close" data-dismiss="alert">&times;</a>
+                                            {{ msg }}
+                                        </div>
+
+                                    {% endfor %}
+                                {% endif %}
+                            {% endwith %}
+                            <div class="form-group">
+                                <label for="username">用户名</label>
+                                <input type="text" class="form-control" name="username" id="username">
+                            </div>
+                            <div class="form-group">
+                                <label for="pwd">密码</label>
+                                <input type="password" class="form-control" name="pwd" id="pwd">
+                            </div>
+                            <div class="col-md-offset-2">
+                                <input type="submit" class="btn btn-primary" value="提交">
+                                <input type="reset" class="btn btn-default" value="重置">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            <div class="footer">
+                &copy;codeclassromm.com
+            </div>
+        </div>
+    </div>
+{% endblock %}
